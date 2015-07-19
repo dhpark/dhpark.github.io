@@ -1,331 +1,264 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-<<<<<<< HEAD
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0">
+		<meta name="robots" content="noarchive">
+<!-- 		<meta name="google-site-verification" content="498o4V9Ez5PmlAwko3jUMdDsXkoWww2TS1unFWjcMtE"> -->
+		
+		<meta name="description" content="I am a College of William &amp; Mary CompSci Major looking to enter the software industry "> 
+		
+		<title>Daniel Park Portfolio</title>
+		
+		<!-- CSS -->
+		<link href="assets/img/favicon.ico" rel="icon">
+		<link rel="stylesheet" href="assets/css/main.css">
+		<link rel="stylesheet" href="assets/css/normalize.css">
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" type="text/css">
+		<!-- JS -->	
+		<script src="assets/js/jquery.min.js" type="text/javascript"></script>
+		<script src="assets/js/isotope.js" type="text/javascript"></script>
+		<script src="assets/js/function.js" type="text/javascript"></script>
+		<script src="contact.js" type="text/javascript"></script>
+		<script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script>
+		<script type="text/javascript">
+		
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-25388448-1']);
+		  _gaq.push(['_trackPageview']);
+		
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		
+		</script>
+		<script type="text/javascript">
+function sizeContainer(initial) {
+	var containerSize = 290; //size of container including padding+margin. adjust if you adjust size of boxes
+	var $cont = $('.portfolio-container')
+	var currWidth = $cont.width();
+	var windowWidth = $(this).width();
+	console.log(currWidth + ":" + windowWidth)
+	var currCols = Math.floor(currWidth/containerSize);
+	var possCols = Math.floor(windowWidth/containerSize);
+	if (currCols != possCols) {
+		$cont.width(possCols*containerSize);
+		if(!initial) {
+			setTimeout(function(){
+				$cont.isotope('reLayout', function(){console.log('relayedout')});
+			},275) //this time needs to be greater than the animation time for the container div
+		}
+	}
+}
+$(document).ready(function() {
+  	sizeContainer(true);
+      $('.portfolio-container').isotope({
+        // options
+        itemSelector : '.portfolio-item',
+        resizesContainer: true,
+        layoutMode : 'masonry'
+      });
+  	
+  	$(window).resize(function(){
+  		sizeContainer(false);
+  	});
+  	
+    $(".portfolio-container").click(function(){
+         window.location=$(this).find("a").attr("href");
+         return false;
+         
+    });
+        
+});
+</script>
+	</head>
 
-    <title>Daniel Park</title>
+	<body>
+		<header id="header">
+			<section class="primary-nav">
+			
+				<nav>
+					<a class="logo" href="/index.html">Daniel Park</a>
+					<a href="#contact">Contact</a>
+					<a href="#about">About</a>
+					<a href="#skills">Skills</a>
+					<a href="#portfolio">Portfolio</a>	
+				</nav>	
+			</section>
+			
+			<h1><em>Daniel Park</em> Coder. Designer. Bboy.</h1>
+		</header>
+		
+	
+	<section id="portfolio" class="portfolio">
+		<h1>
+			HACKATHONS
+		</h1>
+		<div class="portfolio-container" style="width: 1160px; position: relative; overflow: hidden; height: 1371px;">
 
-    <!-- Bootstrap core CSS -->
-    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+			<!-- Boka -->
+			<div class="portfolio-item">
+				<h5>Boka</h5>
+				<div class="img-container">
+					<a href="http://severn.me/projects/Boka"><img src="assets/img/boka.png" alt=""></a>
+				</div>
+				<p>Boka is an Android application that allows users to scan (or manually enter) a book's ISBN. The app then searches the web for the safest magnet/torrent/direct download links, and returns the best choices to the user. 
 
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+				Awarded Best Mobile Hack at Hack.UVA (University of Virginia)  </p>
+			</div>
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+			<!-- Givr -->
+			<div class="portfolio-item" style="position: absolute; left: 0px; top: 0px; /* transform: translate3d(0px, 0px, 0px); */">
+				<h5>Givr</h5>
+				<div class="img-container">
+					<img src="assets/img/givr.png" alt="">
+				</div>
+				<p>Givr is a web application that encourages charity donations. It will round up your transactions on your bank account to the nearest dollar and donate that amount to a charity of your choice. 
 
-    <!-- Custom styles for this template -->
-    <link href="/css/carousel.css" rel="stylesheet">
-  </head>
-<!-- NAVBAR
-================================================== -->
-  <body>
-    <div class="navbar-wrapper">
-      <div class="container">
+				Awarded Grand Prize Hack at HACCK (University of Virginia)  </p>
+			</div>
 
-        <nav class="navbar navbar-inverse navbar-static-top">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#">Resume/CV</a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
-                <li class="active"><a href="#">About</a></li>
-                <li><a href="#about">Media</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                  <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li class="dropdown-header">Nav header</li>
-                    <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
+			<!-- Huddle -->
+			<div class="portfolio-item" style="position: absolute; left: 0px; top: 0px; /* transform: translate3d(0px, 0px, 0px); */">
+				<h5>Huddle</h5>
+				<div class="img-container">
+					<a href="http://challengepost.com/software/huddle"><img src="assets/img/huddle.png" alt=""></a>
+				</div>
+				
+				<p>Huddle lets users post their study location on an interactive campus map, facilitating studying with partners and encouraging study sessions.
 
-      </div>
-    </div>
+				Awarded  3rd place Hack at TribeHacks (College of William & Mary)  </p>
+			</div>
 
+			<!-- BitSplit-->
+			<div class="portfolio-item">
+				<h5>BitSplit</h5>
+				<div class="img-container">
+					<a href="https://github.com/dhpark/BitSplit"><img src="assets/img/bitsplit.png" alt="bitsplit"></a>
+				</div>
+				<p>BitSplit will detect if the site will take bitcoin and then give you the QR code of the wallet, allowing quick transfers. Donate bitcoin easily to your favorite websites!  </p>
+			</div>
 
-    <!-- Carousel
-    ================================================== -->
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner" role="listbox">
-        <div class="item active">
-          <img class="first-slide" src="hulia.jpg" height="960" width="720" alt="First slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Daniel Park Portfolio</h1>
-              <p>please hire me please hire me please hire me please hire me please hire me please hire me please hire me please hire me please hire me please hire me please hire me please hire me please hire me please hire me please hire me please hire me please hire me please hire me please hire me </p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <img class="second-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Another example headline.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <img class="third-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>One more for good measure.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div><!-- /.carousel -->
+			<!-- Ziras -->
+			<div class="portfolio-item">
+				<h5>Ziras</h5>
+				<div class="img-container">
+					<img src="assets/img/ziras.png" alt="">
+				</div>
+				<p>Ziras is a place to discuss ideas.  </p>
+			</div>
+		</div>
+		<h1>
+			PERSONAL PROJECTS
+		</h1>
+	</section>
+	
+	
+	<section id="skills" class="services">
+		<section class="serviceitems">
+			<article>
+				<figure>
+					<img class="hires" src="assets/img/service-webdesign.png" alt="webdesign">
+				</figure>
+				
+				<h5>WEB &amp; DIGITAL DESIGN</h5>
+				<p>Responsive Website Design, Application Design, HTML/CSS Development, UI/UX Design &amp; Wire-Framing</p>
+				
+			</article>
+				
+			<article>
+			
+				<figure>
+					<img class="hires" src="assets/img/service-illustration.png" alt="languages">
+				</figure>
+				
+				<h5>LANGUAGES</h5>
+				<p> Proficient in Python, HTML, CSS (Sass and LESS) and LaTex with working knowledge in Java,
+				JavaScript(jQuery and AngularJS), PHP, C++ and SQL.</p>
+				
+			</article>
+				
+			<article>			
+				<figure>
+					<img class="hires" src="assets/img/service-animation.png" alt="technology">
+				</figure>
+				
+				<h5>TECHNOLOGY</h5>
+				<p>Familiar with Parse, Jenkins, Subversion, Git, SonarQube, Hudson, Linux, AWS, and have working knowledge of many frameworks (bootstrap, spring, flask, etc).</p>
+				
+			</article>
+				
+				<article>
+				
+					<figure>
+						<img class="hires" src="assets/img/service-photo.png" alt="experience">
+					</figure>
+					
+					<h5>EXPERIENCE</h5>
+					<p>Have experience with corporate (GEICO, Capital One), startups (Vagabond Vending, Zairge, Artisan Meads) and regularly attend hackathons. Attempting to do more open source.
+					</p>
+					
+				</article>
+				
+			</section>
+			
+		</section>
+	
+	
+		<section id="about" class="about">
+			<section>
+				<h3>Daniel Park is a driven CS major at the College of William & Mary that aims to go into the software industry after graduation.</h3>
+				<article>
+					<h4>What do I do for you?</h4>
+					<p>Front end development and web design. 
+					 </p>
+				</article>			
+				<article>
+					<h4>What do I do for fun?</h4>
+					<p>I have a variety of side projects you can view on my github. I am also a competitive breakdancer and have performed at concerts.  </p>
+				</article>
+			</section>
+		</section>
+	
+	
+		<section id="contact" class="contact">
+			<h2>Contact Me</h2>
+			
+			<section class="socialicons">
+				<ul class="social">
+                    <li><a href="https://www.facebook.com/KingLinnius" target="_blank"><i class="fa fa-facebook fa-2x"></i></a></li>
+                    <li><a href="https://twitter.com/parkuponthegale" target="_blank"><i class="fa fa-twitter fa-2x"></i></a></li>
+                    <li><a href="https://instagram.com/parkuponthegale" target="_blank"><i class="fa fa-instagram fa-2x"></i></a></li>
+                    <li><a href="https://www.youtube.com/channel/UCMKjzaQWnSWJuGE3FEDCu1w/videos" target="_blank"><i class="fa fa-youtube fa-2x"></i></a></li>
+                    <li><a href="skype:terransopson" target="_blank"><i class="fa fa-skype fa-2x"></i></a></li>
+                </ul>
+			</section>
+			
+			<h6>Recruiting? Got a project for me? Got a funny joke? <br><b>Send it my way!</b><br></h6>
+			
+			<form class="contactform" method="post" autocomplete="off">
+				<input type="text" id="name" name="name" value="" placeholder="Full Name">
+				<input type="email" id="email" name="email" value="" placeholder="Email">
+				<textarea id="project" name="project" placeholder="Project"></textarea>
+				
+				<button class="button" type="submit">Send it to me!</button>
+				
+			</form>
+				
+		</section>
+	
+	<a class="return"></a>
 
+	<footer>
 
-    <!-- Marketing messaging and featurettes
-    ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
-
-    <div class="container marketing">
-
-      <!-- Three columns of text below the carousel -->
-      <div class="row">
-        <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Heading</h2>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-      </div><!-- /.row -->
-
-
-      <!-- START THE FEATURETTES -->
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7 col-md-push-5">
-          <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5 col-md-pull-7">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <!-- /END THE FEATURETTES -->
-
-
-      <!-- FOOTER -->
-      <footer>
-        <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-      </footer>
-
-    </div><!-- /.container -->
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script src="../../assets/js/vendor/holder.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-  </body>
+		<p>© 2015 Daniel Park. All rights reserved.</p>
+		
+	</footer>
+	
+	<div class="returning">
+		<a href="#header">Return to top</a>
+	</div>
+	</body>
 </html>
-=======
-    <!-- Meta Stuff -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <!--favicon-->
-    <link rel="icon" type="image/png" href="http://paolotripodi.com/nu/img/profilepict.jpg">
-    <title>Paolo Tripodi - Digital Designer</title>
-    <meta name="author" content="Paolo Tripodi" />
-    <meta name="copyright" content="© Paolo Tripodi - 2014" />
-    <!--Facebook Opengraph-->
-    <meta property="og:title" content="Paolo Tripodi - Digital Designer" />
-    <meta property="og:type" content="article" />
-    <meta property="og:image" content="http://www.paolotripodi.com/nu/img/profilepict.jpg" />
-    <meta property="og:url" content="http://www.paolotripodi.com/nu/" />
-    <meta property="og:description" content="Full stack digital designer, front end ninja." />
-    <!--Twitter Share-->          
-    <meta name="twitter:card" content="Full stack digital designer, front end ninja." />
-    <meta name="twitter:title" content="Paolo Tripodi - Digital Designer" />
-    <meta name="twitter:description" content="Full stack digital designer, front end ninja." />
-    <meta name="twitter:image" content="http://www.paolotripodi.com/nu/img/profilepict.jpg" />
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <!--Lato-->   
-    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
-    <!--simple-line-icons-->
-    <link rel="stylesheet" href="simple-line-icons/simple-line-icons.css" />
-    <!--social-icon-font-->
-    <link rel="stylesheet" href="social-icon-font/css/fontello.css" />
-    <!--Main Stylesheet-->
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-  
-    <!-- Site Overlay -->
-    <div class="site-overlay"></div>
-    
-    <div id="container">
-      <!--Profile-->
-      <div class="profile">
-        <div class="profile-pict"></div>
-        <h2>Paolo Tripodi</h2>
-      </div>
-      <!--Header-->
-      <header>
-        <div class="container">
-          <div class="row">
-            <div class="about-me col-md-12">
-              <h1 class="first-sentence"><span style="transition: all, 0.3s;">Full stack digital designer, front end ninja.<br />Currently web designer <a href="http://www.zetalab.com" target="_blank">@zetalab</a>, Milan</span></h1>
-              <div class="switch">
-                <a class="first" onclick="$('.brand').animatescroll({padding:0});"><span>More about me</span></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
-      <!--Dribble Feeds-->
-      <div id="grid-a-licious">
-        <h1 class="section-title">My most popular work</h1>
-      </div>
-    </div>
-    <!--Footer-->
-    <footer>
-      <h1>Let's Connect</h1>
-      <br />
-      <div class="social">
-        <a href="https://www.facebook.com/paolo.tripodi.94" target="_blank" class='social-facebook'></a>
-        <a href="https://twitter.com/paolotripodi_" target="_blank" class='social-twitter'></a>
-        <a href="https://www.behance.net/paolotripodi" target="_blank" class='social-behance'></a>
-        <a href="https://github.com/paolotripodi/" target="_blank" class='social-github'></a>
-        <a href="http://lnkd.in/bzWHKsY" target="_blank" class='social-linkedin'></a>
-        <a href="mailto:mail@paolotripodi.com" target="_blank" class='social-mail'></a>
-      </div>
-      <p>@2014 Paolo Tripodi  &mdash; <a class="button" onClick='window.location="view-source:" + window.location.href'>View Source</a> <br />Like this page? <a href="https://github.com/paolotripodi/dribbble-portfolio" target="_blank">Get it on Github</a> </p>
-    </footer>
-    <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <!-- Modernizer -->
-    <script src="http://modernizr.com/downloads/modernizr-latest.js"></script>
-    <!-- Bootstrap -->
-    <script src="js/bootstrap.min.js"></script>
-    <!--jribble-->
-    <script src="js/jquery.jribbble-1.0.1.ugly.js"></script>
-    <!--animate scroll-->
-    <script src="js/animatescroll.js"></script>
-    <!--grid-a-licious-->
-    <script src="js/jquery.grid-a-licious.min.js"></script>
-    <!--portfolio-->
-    <script src="js/portfolio.js"></script>   
-    <!--google analytics-->
-    <script type="text/javascript">
-    
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-37420520-1']);
-      _gaq.push(['_trackPageview']);
-    
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    
-    </script>
-    
-  </body>
-</html>
->>>>>>> 7900b0b4f75c23a4bf7a2cb6401fd280691de78a
+
