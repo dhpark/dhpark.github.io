@@ -189,6 +189,15 @@ section.main {
   border-radius: 27px 27px 0 0;
   background: #000; }
 
+.macbook > .lid > .bezel > .camera {
+  width: 10px;
+  height: 10px;
+  margin: 0 auto;
+  position: relative;
+  bottom: 350px;
+  border-radius: 50%;
+  background: #2b2b2b; }
+
 .macbook > .lid > .bezel > .screen {
   width: 649.8px;
   height: 361.8px;
@@ -430,19 +439,6 @@ section.contact .socialicons {
   margin: 0 auto 30px auto;
   clear: both; }
 
-section.contact .socialicons a {
-  width: 50px;
-  height: 50px;
-  border-radius: 50px;
-  margin: 12px;
-  background: url("../img/sprites.png") no-repeat -1px -1px;
-  display: block;
-  float: left;
-  text-indent: -9999px;
-  -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  transition: all 0.2s ease; }
-
 section.contact .socialicons a:hover {
   margin-top: 7px; }
 
@@ -644,8 +640,7 @@ body > div.returning a {
     display: none !important; } }
 @media (max-width: 650px) {
   body > header {
-    height: 420px;
-    background: #e26867; }
+    height: 420px; }
 
   body > section {
     padding: 50px 0; }
@@ -801,18 +796,5 @@ body > div.returning a {
 
   .return_scroll {
     display: none; } }
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (-moz-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2) {
-  .primary-nav a.logo {
-    background: url("../img/sprites@2x.png") no-repeat -3px 1px;
-    -webkit-background-size: 207px;
-    -moz-background-size: 207px;
-    background-size: 207px;
-    background-color: #e26868; }
-
-  section.contact .socialicons a {
-    background: url("../img/sprites@2x.png") no-repeat -3px 1px;
-    -webkit-background-size: 207px;
-    -moz-background-size: 207px;
-    background-size: 207px; } }
 
 /*# sourceMappingURL=main.css.map */
