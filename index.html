@@ -2,9 +2,6 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0">
-    <meta name="robots" content="noarchive">
-<!--    <meta name="google-site-verification" content="498o4V9Ez5PmlAwko3jUMdDsXkoWww2TS1unFWjcMtE"> -->
-    
     <meta name="description" content="I am a College of William &amp; Mary CompSci Major looking to enter the software industry "> 
     
     <title>Daniel Park Portfolio</title>
@@ -20,51 +17,51 @@
     <script src="assets/js/function.js" type="text/javascript"></script>
     <script src="contact.js" type="text/javascript"></script>
     <script type="text/javascript">
-function sizeContainer(initial) {
-  var containerSize = 290; //size of container including padding+margin. adjust if you adjust size of boxes
-  var $cont = $('.portfolio-container')
-  var currWidth = $cont.width();
-  var windowWidth = $(this).width();
-  console.log(currWidth + ":" + windowWidth)
-  var currCols = Math.floor(currWidth/containerSize);
-  var possCols = Math.floor(windowWidth/containerSize);
-  if (currCols != possCols) {
-    $cont.width(possCols*containerSize);
-    if(!initial) {
-      setTimeout(function(){
-        $cont.isotope('reLayout', function(){console.log('relayedout')});
-      },275) //this time needs to be greater than the animation time for the container div
-    }
-  }
-}
-$(document).ready(function() {
-    sizeContainer(true);
-      $('.portfolio-container').isotope({
-        // options
-        itemSelector : '.portfolio-item',
-        resizesContainer: true,
-        layoutMode : 'masonry'
+      function sizeContainer(initial) {
+        var containerSize = 290; //size of container including padding+margin. adjust if you adjust size of boxes
+        var $cont = $('.portfolio-container')
+        var currWidth = $cont.width();
+        var windowWidth = $(this).width();
+        console.log(currWidth + ":" + windowWidth)
+        var currCols = Math.floor(currWidth/containerSize);
+        var possCols = Math.floor(windowWidth/containerSize);
+        if (currCols != possCols) {
+          $cont.width(possCols*containerSize);
+          if(!initial) {
+            setTimeout(function(){
+              $cont.isotope('reLayout', function(){console.log('relayedout')});
+            },275) //this time needs to be greater than the animation time for the container div
+          }
+        }
+      }
+      $(document).ready(function() {
+          sizeContainer(true);
+            $('.portfolio-container').isotope({
+              // options
+              itemSelector : '.portfolio-item',
+              resizesContainer: true,
+              layoutMode : 'masonry'
+            });
+          
+          $(window).resize(function(){
+            sizeContainer(false);
+          });
+          
+          $(".portfolio-item").click(function(){
+               window.location=$(this).find("a").attr("href");
+               return false;
+               
+          });
+              
       });
-    
-    $(window).resize(function(){
-      sizeContainer(false);
-    });
-    
-    $(".portfolio-container").click(function(){
-         window.location=$(this).find("a").attr("href");
-         return false;
-         
-    });
-        
-});
-</script>
-<script>document.write('<script src="http://' + (location.host || 'localhost')
-.split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+      </script>
+      <script>document.write('<script src="http://' + (location.host || 'localhost')
+      .split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
   </head>
   <body>
     <section class="primary-nav">
+      <a class="logo" href="/">Daniel Park</a>
       <nav>
-        <a href="/index.html">Daniel Park</a>
         <a href="#contact">Contact</a>
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
@@ -72,97 +69,92 @@ $(document).ready(function() {
       </nav>  
     </section>
     
-  
-    <section id="portfolio" class="portfolio">
-      <h1>
-        HACKATHONS
-      </h1>
-      <div class="portfolio-container" style="width: 1160px; position: relative; overflow: hidden; height: 1371px;">
-
-        <!-- Boka -->
-        <div class="portfolio-item">
-          <h5>Boka</h5>
-          <div class="img-container">
-            <a href="http://severn.me/projects/Boka"><img src="assets/img/boka.png" alt=""></a>
+    <section id="main">
+      <section id="intro">
+        <div class="macbook">
+          <div class="lid">
           </div>
-          <p>Boka is an Android application that allows users to scan (or manually enter) a book's ISBN. The app then searches the web for the safest magnet/torrent/direct download links, and returns the best choices to the user. 
-
-          Awarded Best Mobile Hack at Hack.UVA (University of Virginia)  </p>
         </div>
-
-        <!-- Givr -->
-        <div class="portfolio-item" style="position: absolute; left: 0px; top: 0px; /* transform: translate3d(0px, 0px, 0px); */">
-          <h5>Givr</h5>
-          <div class="img-container">
-            <img src="assets/img/givr.png" alt="">
-          </div>
-          <p>Givr is a web application that encourages charity donations. It will round up your transactions on your bank account to the nearest dollar and donate that amount to a charity of your choice. 
-
-          Awarded Grand Prize Hack at HACCK (University of Virginia)  </p>
-        </div>
-
-        <!-- Huddle -->
-        <div class="portfolio-item" style="position: absolute; left: 0px; top: 0px; /* transform: translate3d(0px, 0px, 0px); */">
-          <h5>Huddle</h5>
-          <div class="img-container">
-            <a href="http://challengepost.com/software/huddle"><img src="assets/img/huddle.png" alt=""></a>
-          </div>
-          
-          <p>Huddle lets users post their study location on an interactive campus map, facilitating studying with partners and encouraging study sessions.
-
-          Awarded  3rd place Hack at TribeHacks (College of William & Mary)  </p>
-        </div>
-
-        <!-- BitSplit-->
-        <div class="portfolio-item">
-          <h5>BitSplit</h5>
-          <div class="img-container">
-            <a href="https://github.com/dhpark/BitSplit"><img src="assets/img/bitsplit.png" alt="bitsplit"></a>
-          </div>
-          <p>BitSplit will detect if the site will take bitcoin and then give you the QR code of the wallet, allowing quick transfers. Donate bitcoin easily to your favorite websites!  </p>
-        </div>
-
-        <!-- Ziras -->
-        <div class="portfolio-item">
-          <h5>Ziras</h5>
-          <div class="img-container">
-            <img src="assets/img/ziras.png" alt="">
-          </div>
-          <p>Ziras is a place to discuss ideas.  </p>
-        </div>
-      </div>
-      <h1>
-        PERSONAL PROJECTS
-      </h1>
-    </section>
-    <section id="contact" class="contact">
-      <h2>Contact Me</h2>
-      
-      <section class="socialicons">
-        <ul class="social">
-                    <li><a href="https://www.facebook.com/KingLinnius" target="_blank"><i class="fa fa-facebook fa-2x"></i></a></li>
-                    <li><a href="https://twitter.com/parkuponthegale" target="_blank"><i class="fa fa-twitter fa-2x"></i></a></li>
-                    <li><a href="https://instagram.com/parkuponthegale" target="_blank"><i class="fa fa-instagram fa-2x"></i></a></li>
-                    <li><a href="https://www.youtube.com/channel/UCMKjzaQWnSWJuGE3FEDCu1w/videos" target="_blank"><i class="fa fa-youtube fa-2x"></i></a></li>
-                    <li><a href="skype:terransopson" target="_blank"><i class="fa fa-skype fa-2x"></i></a></li>
-                </ul>
       </section>
-      
-      <h6>Recruiting? Got a project for me? Got a funny joke? <br><b>Send it my way!</b><br></h6>
-      
-      <form class="contactform" method="post" autocomplete="off">
-        <input type="text" id="name" name="name" value="" placeholder="Full Name">
-        <input type="email" id="email" name="email" value="" placeholder="Email">
-        <textarea id="project" name="project" placeholder="Project"></textarea>
-        
-        <button class="button" type="submit">Send it to me!</button>
-        
-      </form>
-        
-    </section>
-  
-  <a class="return"></a>
+      <section id="portfolio" class="portfolio">
+        <h1>
+          HACKATHONS
+        </h1>
+        <div class="portfolio-container" style="width: 1160px; position: relative; overflow: hidden; height: 1371px;">
+          <!-- Perish -->
+          <div class="portfolio-item">
+            <h5>Perish</h5>
+            <div class="img-container" style="padding-top:5px; padding-bottom:5px">
+              <a href="http://perish.me"><img class="perish" src="assets/img/perish.png" alt="perish"></a>
+            </div>
+            <p>Perish is a unique RESTful API that allows a user to set termination conditions on files. After the condition is met(time to live, number of downloads, etc), the file is deleted from our servers. 
 
+            Awarded MLH Grand Prize and EaaS Grand Prize at the Summer Jam Api Hackathon</p>
+          </div>
+          <!-- TrackthePlanet -->
+          <div class="portfolio-item">
+            <h5>Orbit</h5>
+            <div class="img-container">
+              <a href="http://devpost.com/software/orbit-0uxr2l"><img src="assets/img/orbit.jpg" alt="orbit"></a>
+            </div>
+            <p>Orbit is an attempt at an internet of things hack at HackThePlanet, MLH's season finale hackathon. Using bluetooth as the communication protocol, the user can set distances and the central node (a wearable) will alert you if your belongings have traveled farther than the user-defined distance.</p>
+          </div>
+          <!-- Boka -->
+          <div class="portfolio-item">
+            <h5>Boka</h5>
+            <div class="img-container">
+              <a href="http://severn.me/projects/Boka"><img src="assets/img/boka.png" alt=""></a>
+            </div>
+            <p>Boka is an Android application that allows users to scan (or manually enter) a book's ISBN. The app then searches the web for the safest magnet/torrent/direct download links, and returns the best choices to the user. 
+
+            Awarded Best Mobile Hack at Hack.UVA (University of Virginia)  </p>
+          </div>
+
+          <!-- Givr -->
+          <div class="portfolio-item" style="position: absolute; left: 0px; top: 0px; /* transform: translate3d(0px, 0px, 0px); */">
+            <h5>Givr</h5>
+            <div class="img-container">
+              <img src="assets/img/givr.png" alt="">
+            </div>
+            <p>Givr is a web application that encourages charity donations. It will round up your transactions on your bank account to the nearest dollar and donate that amount to a charity of your choice. 
+
+            Awarded Grand Prize Hack at HACCK (University of Virginia)  </p>
+          </div>
+
+          <!-- Huddle -->
+          <div class="portfolio-item" style="position: absolute; left: 0px; top: 0px; /* transform: translate3d(0px, 0px, 0px); */">
+            <h5>Huddle</h5>
+            <div class="img-container">
+              <a href="http://challengepost.com/software/huddle"><img src="assets/img/huddle.png" alt=""></a>
+            </div>
+            
+            <p>Huddle lets users post their study location on an interactive campus map, facilitating studying with partners and encouraging study sessions.
+
+            Awarded  3rd place Hack at TribeHacks (College of William & Mary)  </p>
+          </div>
+
+          <!-- BitSplit-->
+          <div class="portfolio-item">
+            <h5>BitSplit</h5>
+            <div class="img-container">
+              <a href="https://github.com/dhpark/BitSplit"><img src="assets/img/bitsplit.png" alt="bitsplit"></a>
+            </div>
+            <p>BitSplit will detect if the site will take bitcoin and then give you the QR code of the wallet, allowing quick transfers. Donate bitcoin easily to your favorite websites!  </p>
+          </div>
+
+          <!-- Ziras -->
+          <div class="portfolio-item">
+            <h5>Ziras</h5>
+            <div class="img-container">
+              <img src="assets/img/ziras.png" alt="">
+            </div>
+            <p>Ziras is a place to discuss ideas.  </p>
+          </div>
+        </div>
+        <h1>
+          PERSONAL PROJECTS
+        </h1>
+    </section>
   <footer>
 
     <p>© 2015 Daniel Park. All rights reserved.</p>
