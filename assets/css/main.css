@@ -67,7 +67,7 @@ h6 {
 
 body > section {
   width: 100%;
-  background-color: white; }
+  background-color: #4183D7; }
 
 /* =CSS Animations
 ----------------------------------------------- */
@@ -223,7 +223,7 @@ section.main {
   color: #FFF; }
 
 .macbook > .lid > .bezel > .screen > .screen-content > a {
-  text-decoration: none;
+  text-decoration: no ne;
   color: #3A92C8; }
 
 .macbook > .base {
@@ -277,6 +277,9 @@ section.portfolio .portfolio-item h5 {
   -webkit-font-smoothing: antialiased !important;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004) !important;
   text-align: center; }
+
+section.portfolio .portfolio-item h5:hover {
+  text-transform: lowercase; }
 
 /* deals with image sizing */
 section.portfolio .portfolio-item .img-container, .portfolio-item .sml-img-container, .portfolio-item .med-img-container {
@@ -798,3 +801,25 @@ body > div.returning a {
     display: none; } }
 
 /*# sourceMappingURL=main.css.map */
+.bordering {
+  border-bottom-color: #d0d1d5;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-image-outset: 0px;
+  border-image-repeat: stretch;
+  border-image-slice: 100%;
+  border-image-source: none;
+  border-image-width: 1;
+  border-left-color: #dfe0e4;
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-right-color: #dfe0e4;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: #e5e6e9;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-top-style: solid;
+  border-top-width: 1px; }
