@@ -210,7 +210,7 @@ section.main {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  padding: 30px 20px;
+  padding: 20px 5px;
   font-family: "Source Code Pro", monospace;
   font-size: 16px;
   line-height: 38px;
@@ -796,8 +796,11 @@ body > div.returning a {
 
   .return_scroll {
     display: none; } }
-
 /*# sourceMappingURL=main.css.map */
+.sourcecode {
+  font-family: "Source Code Pro", sans-serif;
+  font-size: 14px; }
+
 .bordering {
   border-bottom-color: #d0d1d5;
   border-bottom-left-radius: 3px;
@@ -820,3 +823,10 @@ body > div.returning a {
   border-top-right-radius: 3px;
   border-top-style: solid;
   border-top-width: 1px; }
+
+.introlinks {
+  color: #3A92C8;
+  font-family: "Source Code Pro", sans-serif;
+  font-size: 14px; }
+
+/*# sourceMappingURL=main.css.map */

@@ -11,10 +11,13 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
     <!-- JS --> 
     <script src="assets/js/jquery.min.js" type="text/javascript"></script>
     <script src="assets/js/isotope.js" type="text/javascript"></script>
     <script src="assets/js/function.js" type="text/javascript"></script>
+    <script src="assets/js/angular.js" type="text/javascript"></script>
+    <script src="assets/js/respond.js" type="text/javascript"></script>
     <script type="text/javascript">
       function sizeContainer(initial) {
         var containerSize = 290; //size of container including padding+margin. adjust if you adjust size of boxes
@@ -54,8 +57,6 @@
               
       });
       </script>
-      <script>document.write('<script src="http://' + (location.host || 'localhost')
-      .split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
   </head>
   <body>
     <section class="primary-nav">
@@ -75,13 +76,19 @@
             <div class="bezel">
               <div class="screen">
                 <div class="screen-content">
-                  >> Daniel Park <br>
-                  >> Williamsburg, Virginia <br>
-                  >> Computer Science Class of 2016 <br>
-                  >> Web design, advanced workflow, object oriented <br>
-                  >> Dabbles in smartwatch applications and kernel development <br><br>
+                  <p class="sourcecode">{</p>
+                  <p class="sourcecode" style=" text-indent: 3em;"><b style="color: #EC407A; width: 90px; display: inline-block; float:left;">name:</b> "Daniel Park",</p>
+                  <p class="sourcecode" style=" text-indent: 3em;"><b style="color: #43A047; width: 90px; display: inline-block; float:left; ">education:</b> [ "College of William & Mary", "Computer Science", "2016" ],</p>
+                  <p class="sourcecode" style=" text-indent: 3em;"><b style="color: #FF5722; width: 90px; display: inline-block; float:left;">skills:</b> [ "Student", "Developer", "Designer", "UX Analyst" ],</p>
+                  <p class="sourcecode" style=" text-indent: 3em;"><b style="color: #009688; width: 90px; display: inline-block; float:left;">languages:</b> [ "Python", "JavaScript", "C/C++" ],</p>
+                  <p class="sourcecode" style=" text-indent: 3em;"><b style="color: #29B6F6; width: 90px; display: inline-block; float:left;">hobbies:</b> [ "Bboying", "Video Games", "Hackathons" ],</p>
+                  <p class="sourcecode" style=" text-indent: 3em;"><b style="color: #5C6BC0; width: 90px; display: inline-block; float:left;">links:</b> [ "<a class="introlinks" href="https://github.com/dhpark/">Github</a>", "<a class="introlinks" href="https://www.linkedin.com/profile/view?id=AAMAAA4Fl0IBFfH9-xW-ogMSUkAVmreXES_x_n0&trk=hp-identity-name">LinkedIn</a>" ], </p>
+                  <p class="sourcecode" style=" text-indent: 3em";><b style="color: #AB47BC; width: 90px; display: inline-block; float:left;" >email:</b> "dhpark01@email.wm.edu"</p>
+                  <p class="sourcecode">}</p>
                   <div style="text-align: center">
-                    <button type="submit" class="btn btn-block btn-lg btn-inverse" style="border radius:2px; background-color: #26A65B; border-color: #26A65B">Get my Resume</button>
+                    <form method="get" action="assets/DanielParkResume.pdf">
+                      <button type="submit" class="btn btn-block btn-lg btn-inverse" style="border radius:4px; background-color: #26A65B; border-color: #26A65B">Get my Resume</button>
+                    </form>
                   </div>
                 </div>
               </div>
