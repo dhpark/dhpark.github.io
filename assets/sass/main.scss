@@ -11,10 +11,12 @@ h1, h2, h3, h4, h5, h6, a, p {
   font-weight: normal;
   font-size: 16px;
   text-decoration: none;
-  line-height: 28px; }
+  line-height: 28px;
+}
 
 p {
-  font-weight: 300; }
+  font-weight: 300;
+}
 
 h1 {
   /* Main Heading Text */
@@ -527,10 +529,10 @@ section.contact button:active {
 /* =Footer
 ----------------------------------------------- */
 body > footer {
-  background-color: #3c4955;
+  background-color: #ECF0F1;
   width: 100%;
-  padding: 35px 0;
-  height: 20px; }
+  padding: 5px 0;
+  height: 40px; }
 
 body > footer img {
   display: block;
@@ -540,24 +542,15 @@ body > footer section {
   width: 380px;
   margin: 0 auto; }
 
-body > footer h6 {
-  color: white;
-  line-height: 34px; }
-
 body footer nav {
   display: block;
   margin: 30px auto 10px auto;
   width: 365px; }
 
-body footer nav a {
-  font-size: 14px;
-  padding: 5px 20px;
-  text-align: center;
-  color: #e7e7e7; }
-
 body footer p {
   text-align: center;
-  font-size: 12px; }
+  font-size: 12px; 
+  line-height: 40px;}
 
 /* =Return to top button
 ----------------------------------------------- */
@@ -795,7 +788,8 @@ body > div.returning a {
     margin: 10px auto; }
 
   .return_scroll {
-    display: none; } }
+    display: none; }
+  }
 
 /*# sourceMappingURL=main.css.map */
 .sourcecode{
